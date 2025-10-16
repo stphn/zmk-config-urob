@@ -1,3 +1,5 @@
+// CC36: 36-key layout compatible with urob's zmk-helpers
+// 5 columns per half + 3 thumb keys per half = 36 total physical keys
 #define CONFIG_WIRELESS
 #define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)                   \
     ZMK_LAYER(                                                                 \
@@ -11,4 +13,5 @@
 #include "zmk-helpers/key-labels/36.h"
 #include "base.keymap"
 
-/{ chosen { zmk,physical-layout = &foostan_corne_5col_layout; }; };
+// Use 36-key layout (compatible with urob's setup)
+/{ chosen { zmk,physical-layout = &five_col_layout; }; };
