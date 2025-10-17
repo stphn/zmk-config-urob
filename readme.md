@@ -2,7 +2,7 @@
 
 This is my personal [ZMK firmware](https://github.com/zmkfirmware/zmk/)
 configuration. It consists of a 34-keys base layout that is re-used for various
-boards, including my Corneish Zen and my Planck.
+boards, including my Corneish Zen.
 
 My configuration currently builds against `v0.3` of upstream ZMK.
 Custom functionality is added through various
@@ -397,8 +397,6 @@ remaining issues:
   workaround, I implemented all homerow combos as homerow-mod-combos. This is
   good enough for day-to-day, but does not address all edge cases (eg changing
   active mods).
-- Very minor: `&bootloader` doesn't work with stm32 boards like the Planck
-  ([#1086](https://github.com/zmkfirmware/zmk/issues/1086))
 
 ## Related resources
 
