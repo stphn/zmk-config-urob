@@ -26,6 +26,8 @@ For detailed explanations, see [urob's documentation](https://github.com/urob/zm
 
 ![Keymap](draw/base.svg)
 
+> *Keymap visualization generated with [keymap-drawer](https://github.com/caksoylar/keymap-drawer). Run `just draw` to regenerate after keymap changes.*
+
 ## My Customizations for Corne Choc Pro BT
 
 ### Board Support
