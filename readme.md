@@ -41,8 +41,8 @@ Added comprehensive RGB controls on the Sys layer (FN + NUM):
 - **Right side**: Brightness, hue, saturation, and animation speed controls (organized in up/down pairs)
 
 ### Build System
-- Container-based GitHub Actions build (more reliable than Nix for CI)
-- Local Nix development environment with setuptools fix for nanopb
+- Container-based GitHub Actions build (switched from Nix to resolve [nanopb pkg_resources error](https://github.com/urob/zmk-actions/issues))
+- Local Nix development environment with setuptools fix for nanopb compatibility
 
 ## Getting Started with Corne Choc Pro BT
 
