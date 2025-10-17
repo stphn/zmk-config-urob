@@ -38,6 +38,9 @@
 
               keymap_drawer
 
+              # Fix for nanopb pkg_resources missing
+              pkgs.python3Packages.setuptools
+
               # -- Used by just_recipes and west_commands. Most systems already have them. --
               # pkgs.gawk
               # pkgs.unixtools.column
