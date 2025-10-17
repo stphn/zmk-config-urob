@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(curl -s https://raw.githubusercontent.com/urob/zmk-actions/main/.github/workflows/build-user-config.yml)"
     ],
     "deny": [],
     "ask": []
