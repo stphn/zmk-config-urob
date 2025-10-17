@@ -1,15 +1,17 @@
-# ZMK Config for Keebart CC36
+# ZMK Config for Keebart Corne Choc Pro BT
 
-This is a fork of [urob's zmk-config](https://github.com/urob/zmk-config) adapted for the [Keebart Corne Wireless (CC36)](https://www.keebart.com/products/corne-wireless).
+This is a fork of [urob's zmk-config](https://github.com/urob/zmk-config) adapted for the [Keebart Corne Choc Pro BT](https://www.keebart.com/products/corne-wireless).
 
 **Huge thanks to urob** for the excellent base configuration, including timeless homerow mods, smart layers, and the comprehensive ZMK modules ecosystem. For detailed explanations of the core features, please refer to [urob's original repository](https://github.com/urob/zmk-config).
 
 ## Hardware
 
-- **Keyboard**: [Keebart Corne Wireless (CC36)](https://www.keebart.com/products/corne-wireless)
+- **Keyboard**: [Keebart Corne Choc Pro BT](https://www.keebart.com/products/corne-wireless)
 - **MCU**: nRF52840 with Bluetooth
 - **Display**: nice!view e-ink displays
 - **LEDs**: Per-key RGB underglow (WS2812)
+
+> **Note**: The board is internally named `cc36` (short for Corne Choc 36-key) to avoid filename length issues in ZMK's build system.
 
 ## Key Features from urob's Config
 
@@ -22,10 +24,12 @@ This configuration inherits urob's excellent features:
 
 For detailed explanations, see [urob's documentation](https://github.com/urob/zmk-config#highlights).
 
-## My Customizations for CC36
+![Keymap](draw/base.svg)
+
+## My Customizations for Corne Choc Pro BT
 
 ### Board Support
-- Added CC36 board definition with 36-key layout (5 columns × 3 rows + 3 thumbs per hand)
+- Added Corne Choc Pro BT board definition (cc36) with 36-key layout (5 columns × 3 rows + 3 thumbs per hand)
 - Configured nice!view display support
 - Enabled per-key RGB underglow with WS2812 LEDs
 
@@ -38,7 +42,7 @@ Added comprehensive RGB controls on the Sys layer (FN + NUM):
 - Container-based GitHub Actions build (more reliable than Nix for CI)
 - Local Nix development environment with setuptools fix for nanopb
 
-## Getting Started with Keebart CC36
+## Getting Started with Corne Choc Pro BT
 
 ### Prerequisites
 1. Fork this repository
@@ -76,21 +80,22 @@ just build cc36
    - `nice_view-cc36_right-zmk.uf2` → Right half
 4. The keyboard will automatically reboot with the new firmware
 
-### Steps I Took to Add CC36 Support
+### Steps I Took to Add Corne Choc Pro BT Support
 
 1. **Created board definition** in `config/boards/arm/cc36/`:
+   - Named `cc36` (short for Corne Choc 36-key) to avoid filename length issues
    - `cc36.dtsi` - Base device tree with matrix transform and hardware config
    - `cc36_left.dts` / `cc36_right.dts` - Split keyboard halves with RGB LED strips
    - `cc36_left_defconfig` / `cc36_right_defconfig` - Board-specific Kconfig
    - `cc36.zmk.yml` - Board metadata with siblings configuration
 
-2. **Fixed board references** in `cc36.zmk.yml` to use correct sibling names (`cc36_left/right` instead of `corne_choc_pro_left/right`)
+2. **Fixed board references** in `cc36.zmk.yml` to use correct sibling names (`cc36_left/right`)
 
 3. **Added RGB support** in defconfig files and keymap with full controls
 
 4. **Fixed CI build** by switching to container mode to resolve nanopb `pkg_resources` error
 
-5. **Updated `build.yaml`** to build for CC36 with nice!view shields
+5. **Updated `build.yaml`** to build for cc36 with nice!view shields
 
 ---
 
@@ -108,7 +113,7 @@ For comprehensive documentation on the following topics, please refer to [urob's
 
 - [urob's ZMK modules collection](https://github.com/search?q=topic%3Azmk-module+fork%3Atrue+owner%3Aurob+&type=repositories) - Used in this configuration
 - [ZMK Firmware Documentation](https://zmk.dev/) - Official ZMK docs
-- [Keebart CC36](https://www.keebart.com/products/corne-wireless) - Hardware specifications
+- [Keebart Corne Choc Pro BT](https://www.keebart.com/products/corne-wireless) - Hardware specifications
 
 ## License
 
