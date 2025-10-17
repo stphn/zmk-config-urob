@@ -22,8 +22,8 @@ manifest:
     revision: v0.3 # Pin everything to v0.3
 
   remotes:
-    - name: urob
-      url-base: https://github.com/urob
+    - name: stphn
+      url-base: https://github.com/stphn
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
 
