@@ -13,5 +13,5 @@ outputs:
   - ble
 url: https://keebart.com/products/corne-wireless
 siblings:
-  - corne_choc_pro_left
-  - corne_choc_pro_right
+  - cc36_left
+  - cc36_right
