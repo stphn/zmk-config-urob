@@ -72,13 +72,15 @@ just build corne_choc_pro
 ### Flashing the Keyboard
 1. Put the keyboard into bootloader mode (double-tap reset button)
 2. A USB drive named "KEEBART" will appear (note: this name may vary - could be "NICENANO" or another name depending on your bootloader)
-3. Copy the corresponding `.uf2` file to the drive:
+3. Copy the corresponding `.uf2` file from the `firmware/` folder to the drive:
    ```bash
-   # Flash left side
-   cp .build/nice_view-corne_choc_pro_left/zephyr/zmk.uf2 /Volumes/KEEBART/
+   # From GitHub Actions (download and extract firmware.zip first)
+   cp firmware/corne_choc_pro_left-nice_view.uf2 /Volumes/KEEBART/
+   cp firmware/corne_choc_pro_right-nice_view.uf2 /Volumes/KEEBART/
 
-   # Flash right side
-   cp .build/nice_view-corne_choc_pro_right/zephyr/zmk.uf2 /Volumes/KEEBART/
+   # From local build
+   cp firmware/nice_view-corne_choc_pro_left.uf2 /Volumes/KEEBART/
+   cp firmware/nice_view-corne_choc_pro_right.uf2 /Volumes/KEEBART/
    ```
 4. The keyboard will automatically reboot with the new firmware
 
