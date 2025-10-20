@@ -11,7 +11,6 @@ This is a fork of [urob's zmk-config](https://github.com/urob/zmk-config) adapte
 - **Display**: nice!view e-ink displays
 - **LEDs**: Per-key RGB underglow (WS2812)
 
-> **Note**: The board is internally named `cc36` (short for Corne Choc 36-key) to avoid filename length issues in ZMK's build system.
 
 ## Key Features from urob's Config
 
@@ -31,7 +30,7 @@ For detailed explanations, see [urob's documentation](https://github.com/urob/zm
 ## My Customizations for Corne Choc Pro BT
 
 ### Board Support
-- Added Corne Choc Pro BT board definition (cc36) with 36-key layout (5 columns × 3 rows + 3 thumbs per hand)
+- Added Corne Choc Pro BT board definition with 36-key layout (5 columns × 3 rows + 3 thumbs per hand)
 - Configured nice!view display support
 - Enabled per-key RGB underglow with WS2812 LEDs
 
@@ -39,10 +38,6 @@ For detailed explanations, see [urob's documentation](https://github.com/urob/zm
 Added comprehensive RGB controls on the Sys layer (FN + NUM):
 - **Left side**: Toggle on/off, cycle effects
 - **Right side**: Brightness, hue, saturation, and animation speed controls (organized in up/down pairs)
-
-### Build System
-- Container-based GitHub Actions build (switched from Nix to resolve [nanopb pkg_resources error](https://github.com/urob/zmk-actions/issues/11))
-- Local Nix development environment with setuptools fix for nanopb compatibility
 
 ## Getting Started with Corne Choc Pro BT
 
@@ -71,7 +66,7 @@ direnv allow
 just init
 
 # Build firmware
-just build cc36
+just build corne_choc_pro
 ```
 
 ### Flashing the Keyboard
@@ -80,29 +75,26 @@ just build cc36
 3. Copy the corresponding `.uf2` file to the drive:
    ```bash
    # Flash left side
-   cp .build/nice_view-cc36_left/zephyr/zmk.uf2 /Volumes/KEEBART/
+   cp .build/nice_view-corne_choc_pro_left/zephyr/zmk.uf2 /Volumes/KEEBART/
 
    # Flash right side
-   cp .build/nice_view-cc36_right/zephyr/zmk.uf2 /Volumes/KEEBART/
+   cp .build/nice_view-corne_choc_pro_right/zephyr/zmk.uf2 /Volumes/KEEBART/
    ```
 4. The keyboard will automatically reboot with the new firmware
 
 ### Steps I Took to Add Corne Choc Pro BT Support
 
-1. **Created board definition** in `config/boards/arm/cc36/`:
-   - Named `cc36` (short for Corne Choc 36-key) to avoid filename length issues
-   - `cc36.dtsi` - Base device tree with matrix transform and hardware config
-   - `cc36_left.dts` / `cc36_right.dts` - Split keyboard halves with RGB LED strips
-   - `cc36_left_defconfig` / `cc36_right_defconfig` - Board-specific Kconfig
-   - `cc36.zmk.yml` - Board metadata with siblings configuration
+1. **Created board definition** in `config/boards/arm/corne_choc_pro/`:
+   - `corne_choc_pro.dtsi` - Base device tree with matrix transform and hardware config
+   - `corne_choc_pro_left.dts` / `corne_choc_pro_right.dts` - Split keyboard halves with RGB LED strips
+   - `corne_choc_pro_left_defconfig` / `corne_choc_pro_right_defconfig` - Board-specific Kconfig
+   - `corne_choc_pro.zmk.yml` - Board metadata with siblings configuration
 
-2. **Fixed board references** in `cc36.zmk.yml` to use correct sibling names (`cc36_left/right`)
+2. **Fixed board references** in `corne_choc_pro.zmk.yml` to use correct sibling names
 
 3. **Added RGB support** in defconfig files and keymap with full controls
 
-4. **Fixed CI build** by switching to container mode to resolve nanopb `pkg_resources` error
-
-5. **Updated `build.yaml`** to build for cc36 with nice!view shields
+4. **Updated `build.yaml`** to build for corne_choc_pro with nice!view shields
 
 ---
 
