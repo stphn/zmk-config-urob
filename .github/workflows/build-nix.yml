@@ -10,7 +10,7 @@ jobs:
   build:
     uses: urob/zmk-actions/.github/workflows/build-user-config.yml@main
     with:
-      run-in-container: true
+      run-in-container: false
       # Set to 'gnuarmemb' 'zephyr' or 'zephyr-full' (from fastest to
       # most compatible). ZMK Studio requires 'zephyr-full'.
       toolchain: zephyr
