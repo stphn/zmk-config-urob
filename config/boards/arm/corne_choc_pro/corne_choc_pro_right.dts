@@ -4,12 +4,12 @@
 * SPDX-License-Identifier: MIT
 */
 
-#include "cc36.dtsi"
+#include "corne_choc_pro.dtsi"
 #include <dt-bindings/led/led.h>
 
 / {
-    model = "cc36_right";
-    compatible = "cc36_right";
+    model = "corne_choc_pro_right";
+    compatible = "corne_choc_pro_right";
 
     chosen {
         zmk,battery = &fuelgauge;
